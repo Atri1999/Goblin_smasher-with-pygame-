@@ -347,6 +347,7 @@ while run:
 				vel=(man.jumpCount**2)*0.5
 				if man.jumpCount>0:
 					
+					
 						
 					if man.y-vel>0:	
 						man.y-=vel*neg
@@ -356,7 +357,7 @@ while run:
 						
 					for pf in range(len(platforms)-1,-1,-1):
 						if platforms[pf].x<man.hitbox[0]+man.hitbox[2] and platforms[pf].x+platforms[pf].width>man.hitbox[0]:
-							if man.hitbox[2]>platforms[pf].y+platforms[pf].height and man.hitbox[2]+man.hitbox[4]<platforms[pf].y:
+							if man.hitbox[1]<platforms[pf].y+platforms[pf].height and man.hitbox[1]+man.hitbox[3]>platforms[pf].y:
 								man.jumpCount=0
 								
 						
@@ -372,6 +373,7 @@ while run:
 							break
 					else:
 						neg=-1
+						
 						man.y-=vel*neg
 						man.jumpCount-=1
 			else:
